@@ -28,12 +28,16 @@ setup(function () {
   this.sinon.stub(AScene.prototype, 'setupRenderer');
   // Mock renderer.
   AScene.prototype.renderer = {
-    vr: {
+    xr: {
       getDevice: function () { return {requestPresent: function () {}}; },
+      isPresenting: function () { return true; },
       setDevice: function () {},
+      setFoveation: function () {},
       setPoseTarget: function () {},
+      dispose: function () {},
       enabled: false
     },
+    dispose: function () {},
     getContext: function () { return undefined; },
     setAnimationLoop: function () {},
     setSize: function () {},
